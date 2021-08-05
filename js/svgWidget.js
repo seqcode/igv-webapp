@@ -52,7 +52,7 @@ function createSVGWidget ({ browser, $saveModal }) {
         // dismiss modal
         $saveModal.modal('hide');
 
-        browser.saveSVGtoFile({ filename: fn });
+        window.igv_webapp.getBrowser().renderSVG({ filename: fn });
     };
 
     // ok - button
