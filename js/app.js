@@ -96,6 +96,10 @@ async function main($container, config) {
     }
 }
 
+async function setGenome(genomeID){
+	EventBus.globalBus.post({type: "DidChangeGenome", data: {genomeID: genomeID}});
+}
+
 async function initializationHelper(browser, $container, options) {
 
     ['track', 'genome'].forEach(str => {
@@ -205,4 +209,4 @@ async function getGenomesArray(genomes) {
     }
 }
 
-export default {createWebApp, getBrowser}
+export default {createWebApp, getBrowser, setGenome}
